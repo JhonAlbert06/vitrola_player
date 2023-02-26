@@ -2,7 +2,6 @@ import './App.css';
 import Container from './components/Container';
 import Navbar from './components/Navbar';
 
-
 //theme
 import "primereact/resources/themes/lara-light-indigo/theme.css";     
     
