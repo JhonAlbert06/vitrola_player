@@ -15,7 +15,7 @@ import "primeicons/primeicons.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App row-12 justify-content-md-center">
       <Navbar />
       <Container />
     </div>
