@@ -1,24 +1,35 @@
-import { playSound } from '../playMusic';
+import { getCurrentSong, playSound, setAudio, setCurrentSong } from '../playMusic';
 import './Player.jsx.scss';
 
+
+
 function Player() {
+
+    setCurrentSong();
+    setAudio();
+
+    let song = getCurrentSong();
+    let rutaImg = `/images/${song?.name}.jpeg`
+
+    console.log(song?.name);
+
     return (
         <div className="wrapper">
             <div className="player__container">
                 <div className="player__body">
                     <div className="body__cover">
 
-                        <img src="http://ecx.images-amazon.com/images/I/51XSHShbPiL.jpg" alt="Album cover" />
+                        <img src={rutaImg} alt="Album cover" />
 
                         <div className="range"></div>
                     </div>
 
                     <div className="body__info">
-                        <div className="info__album">The Hunting Party</div>
+                        <div className="info__album">{song?.genre}</div>
 
-                        <div className="info__song">Final Masquerade</div>
+                        <div className="info__song">{song?.name}</div>
 
-                        <div className="info__artist">Linkin Park</div>
+                        <div className="info__artist">{song?.artist}</div>
                     </div>
 
                     <div className="body__buttons">
