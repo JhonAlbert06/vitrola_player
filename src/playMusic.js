@@ -12,6 +12,7 @@ const song2 = {
   name: "Billie Jean"
 };
 
+
 let playList = [];
 let songs = [];
 
@@ -41,9 +42,25 @@ fetch('http://127.0.0.1:8000/Songs')
 
 */
 
+let currentSong = null;
+
+
+exports.setCurrentSong = () => {
+
+  if (playList.length === 0){
+
+    let randomIndex = Math.floor(Math.random() * songs.length);
+    currentSong = songs[randomIndex];
+
+  }else{
+    
+  }
+
+}
+
 
 let pause = false;
-let audio = new Audio(`/music/livin-on-a-prayer.mp3`);
+let audio = new Audio(`/music/${currentSong}.mp3`);
 
 exports.playSound = () => {
     if (!pause){
@@ -55,6 +72,10 @@ exports.playSound = () => {
         pause = false;
     }
 };
+
+exports.getCurrentSong = () => {
+  return currentSong;
+}
 
 exports.getPlayList = () => {
   return playList;
