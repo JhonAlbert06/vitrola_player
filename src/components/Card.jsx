@@ -1,10 +1,8 @@
 import React from "react";
 import './Player.jsx.scss';
-import { getPlayList, getSongs } from "../playMusic";
+import { getPlayList} from "../playMusic";
 
-let aux = getSongs();
-
-console.log(aux);
+let aux = getPlayList();
 
 function Card() {
     return (

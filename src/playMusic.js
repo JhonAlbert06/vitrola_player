@@ -1,11 +1,15 @@
 let playList = [];
 let songs = [];
 
+let currentSong = null;
+
+let pause = false;
+let audio = null;
+
 fetch('http://127.0.0.1:8000/Songs/List')
   .then(response => response.json())
   .then(data => {
     playList = data;
-    console.log(playList);
   })
   .catch(error => console.error(error));
 
@@ -13,35 +17,33 @@ fetch('http://127.0.0.1:8000/Songs')
   .then(response => response.json())
   .then(data => {
     songs = data;
-    console.log(songs);
   })
   .catch(error => console.error(error));
 
 
-let currentSong = null;
-
-exports.setCurrentSong = () => {
+  
+exports.setCurrentSong = async () => {
 
   if (playList.length === 0){
-
-    let randomIndex = Math.floor(Math.random() * songs.length);
-    currentSong = songs[randomIndex];
+    currentSong = await playList[0];
+    console.log(`set ${currentSong}`)
 
   }else{
+    let randomIndex = Math.floor(Math.random() * songs.length);
+    currentSong = await songs[randomIndex];
 
-    currentSong = playList.splice(0,1);
+    console.log(`set ${randomIndex}`)
     // hacer llamada a la api de delete on playlist
   }
 
 }
 
-let pause = false;
-let audio = new Audio(`/music/${currentSong}.mp3`);
-
-exports.setAudio = ()=>{
-  audio = new Audio(`/music/${currentSong}.mp3`);
+exports.setAudio = () => {
+  audio = new Audio(`/music/${ currentSong?.name}.mp3`);
+  console.log(currentSong?.name);
 }
 
+// Falta la reproducion automatica
 exports.playSound = () => {
     if (!pause){
         audio.play();
