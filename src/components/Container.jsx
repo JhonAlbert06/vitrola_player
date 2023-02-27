@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./Card";
 import Player from "./Player";
 
 function Container() {
