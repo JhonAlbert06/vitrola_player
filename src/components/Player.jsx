@@ -118,7 +118,7 @@ class Player extends React.Component {
         
 
         let song = getCurrentSong();
-        let siguientes = []
+        let siguientes = playList
 
         let rutaImg = `/images/${song?.name}.jpeg`
 
@@ -140,7 +140,6 @@ class Player extends React.Component {
                             </div>
 
                             <div className="body__buttons">
-                                
                                 
                                 <audio 
                                     className="range" 
@@ -178,8 +177,6 @@ class Player extends React.Component {
                     </div>
                 </div>
             </div>
-
-
         );
     }
 }
