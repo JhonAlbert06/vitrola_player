@@ -21,13 +21,11 @@ async function setCurrentSong(songs, playList) {
         currentSong = playList[0];
 
         try {
-            await axios.delete("http://127.0.0.1:8000/Songs/List", {
+            await axios.delete("172.16.2.235:8000/Songs/List", {
                 name: currentSong.name,
                 genre: currentSong.genre,
                 length: currentSong.length,
                 artist: currentSong.artist,
-                image: "String",
-                music: "String"
             }); // Poner en variable de entorno
 
         } catch (error) {
@@ -50,14 +48,14 @@ class Player extends React.Component {
 
     async componentDidMount() {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/Songs/List'); // Poner en variable de entorno
+          const response = await axios.get('http://172.16.2.235:8000/Songs/List'); // Poner en variable de entorno
           this.setState({ playList: response.data, loading: false });
         } catch (error) {
           this.setState({ error: error.message, loading: false });
         }
     
         try {
-          const response = await axios.get('http://127.0.0.1:8000/Songs');
+          const response = await axios.get('http://172.16.2.235:8000/Songs');
           this.setState({ songs: response.data, loading: false });
         } catch (error) {
           this.setState({ error: error.message, loading: false });
@@ -82,14 +80,12 @@ class Player extends React.Component {
           currentSong = playList[0];
     
           try {
-            await axios.delete('http://127.0.0.1:8000/Songs/List', {
+            await axios.delete('http://172.16.2.235:8000/Songs/List', {
               data: {
                 name: currentSong.name,
                 genre: currentSong.genre,
                 length: currentSong.length,
                 artist: currentSong.artist,
-                image: 'String',
-                music: 'String',
               },
             }); // Poner en variable de entorno
           } catch (error) {}
