@@ -12,7 +12,7 @@ async function setCurrentSong(songs, playList) {
 
     if (playList?.length === 0) {
 
-        let randomIndex = Math.floor(Math.random() * songs?.length + 1) + 0;
+        let randomIndex = Math.floor(Math.random() * songs?.length) + 0;
         currentSong = songs[randomIndex];
         console.log(randomIndex);
         console.log(currentSong);
@@ -21,7 +21,7 @@ async function setCurrentSong(songs, playList) {
         currentSong = playList[0];
 
         try {
-            await axios.delete("http://172.16.19.213:8000/Songs/List", {
+            await axios.delete("http://192.168.1.20:8000/Songs/List", {
                 name: currentSong.name,
                 genre: currentSong.genre,
                 length: currentSong.length,
@@ -48,14 +48,14 @@ class Player extends React.Component {
 
     async componentDidMount() {
         try {
-          const response = await axios.get('http://172.16.19.213:8000/Songs/List'); // Poner en variable de entorno
+          const response = await axios.get('http://192.168.1.20:8000/Songs/List'); // Poner en variable de entorno
           this.setState({ playList: response.data, loading: false });
         } catch (error) {
           this.setState({ error: error.message, loading: false });
         }
     
         try {
-          const response = await axios.get('http://172.16.19.213:8000/Songs');
+          const response = await axios.get('http://192.168.1.20:8000/Songs');
           this.setState({ songs: response.data, loading: false });
         } catch (error) {
           this.setState({ error: error.message, loading: false });
@@ -80,7 +80,7 @@ class Player extends React.Component {
           currentSong = playList[0];
     
           try {
-            await axios.delete('http://172.16.19.213:8000/Songs/List', {
+            await axios.delete('http://192.168.1.20:8000/Songs/List', {
               data: {
                 name: currentSong.name,
                 genre: currentSong.genre,
