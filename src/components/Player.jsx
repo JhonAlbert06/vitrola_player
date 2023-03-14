@@ -96,8 +96,6 @@ class Player extends React.Component {
         this.setState({ currentSong });
     }
 
-
-
     render() {
 
         const { playList, songs, loading, error, } = this.state;
@@ -118,7 +116,7 @@ class Player extends React.Component {
         let song = getCurrentSong();
         let siguientes = playList
 
-        let rutaImg = `/images/${song?.name}.jpeg`
+        let rutaImg = `http://192.168.1.20:8000/public/images/${song?.name}.jpeg`;
 
         return (
             <div className='row'>
@@ -144,7 +142,7 @@ class Player extends React.Component {
                                     // eslint-disable-next-line no-restricted-globals
                                     onEnded={() => { location.reload() }}
                                     autoPlay
-                                    src={`/music/${song?.name}.mp3`}
+                                    src={`http://192.168.1.20:8000/public/music/${song?.name}.mp3`}
                                     controls
                                     style={{ "height": "0px" }}
                                 />
