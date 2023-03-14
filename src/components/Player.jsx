@@ -220,7 +220,7 @@ class Player extends React.Component {
                 </div>
 
                 <div className="wrapper col">
-                    <div className="player__container" style={{"marginLeft": "8%",}}>
+                    <div className="player__container1" style={{ "marginLeft": "4%", }}>
                         <div className="card-body">
                             <h4 className="card-title">Siguientes Canciones</h4>
                             <hr />
@@ -228,8 +228,15 @@ class Player extends React.Component {
                                 siguientes.map((aux) => {
                                     return (
                                         <>
-                                            <h5>{aux?.name}</h5>
-                                            <p key={aux?.id}>{`${aux?.artist} - ${aux?.genre}`}</p>
+                                            <div className='row'>
+                                                <div className='col-6'>
+                                                    <img src={`/images/${aux?.name}.jpeg`} alt="Album cover" width={100} height={100} />
+                                                </div>
+                                                <div className='col-6'>
+                                                    <h5>{aux?.name}</h5>
+                                                    <p key={aux?.id}>{`${aux?.artist} - ${aux?.genre}`}</p>
+                                                </div>
+                                            </div>
                                             <hr />
                                         </>
                                     )
