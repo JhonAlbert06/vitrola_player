@@ -8,7 +8,7 @@ This is the front end, I use ReactJs for made this, was a good experience, i had
 # This is just one of the four proyects, here are the others: 
 
 ----------------------------------------------------------------------
-Back-End --- Rust (Servidor)
+Back-End --- Rust (Server)
 
 	https://github.com/JhonAlbert06/vitrola_back_end.git
 ----------------------------------------------------------------------
