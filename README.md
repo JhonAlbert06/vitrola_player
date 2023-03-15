@@ -2,7 +2,7 @@
 
 This is a Personal Project i make a "jukebox", I used four different programming languages
 
-This is the front end, I use ReactJs for made this, was a good experience, i had learned web development for a lot of moth. so this was a good excuses for use all a learned in practice.
+This is the front end, I use ReactJs for made this, was a good experience, i had learned web development for a lot of months. so this was a good excuses for use all a learned in practice.
 
 # Images
 
