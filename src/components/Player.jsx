@@ -228,7 +228,7 @@ class Player extends React.Component {
                                         <>
                                             <div className='row'>
                                                 <div className='col-6'>
-                                                    <img src={`/images/${aux?.name}.jpeg`} alt="Album cover" width={100} height={100} />
+                                                    <img src={`http://192.168.1.20:8000/public/images/${aux?.name}.jpeg`} alt="Album cover" width={200} height={200} />
                                                 </div>
                                                 <div className='col-6'>
                                                     <h5>{aux?.name}</h5>
