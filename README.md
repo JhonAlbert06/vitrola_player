@@ -1,4 +1,4 @@
-# Front-End --- javascript (ReactJS) (Reproductor)
+# Front-End --- javascript (ReactJS) (Player)
 
 This is a Personal Project i make a "jukebox", I used four different programming languages
 
