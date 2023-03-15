@@ -26,4 +26,7 @@ Movil --- Kotlin (jetpack compose) (Client)
 	https://github.com/JhonAlbert06/vitrola_movil.git
 ----------------------------------------------------------------------
 
+# Notes
+
 <h3>I plan to implement sockets but I still don't know anything about that so I have to investigate</h3>
+<h3>The browser where use, have to had the permissions for play music automatically</h3>
